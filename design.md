@@ -49,33 +49,35 @@
 ```
 /pyrates_game
 │
-├── /data               # Data files such as maps, item databases, etc.
-│   └── quests.json     # Example data file for quests
+├── /data                   # Data files such as maps, item databases, etc.
+│   ├── ports.json          # Stores names and coordinates of ports
+│   └── quests.json         # Example data file for quests
 │
-├── /src                # Source code
+├── /src                    # Source code
 │   ├── __init__.py
-│   ├── main.py         # Main game entry point
-│   ├── config.py       # Game configuration settings
+│   ├── main.py             # Main game entry point
+│   ├── config.py           # Game configuration settings
 │   │
-│   ├── /game           # Game mechanics
+│   ├── /game               # Game mechanics
 │   │   ├── __init__.py
-│   │   ├── sailing.py
-│   │   ├── combat.py
-│   │   ├── trading.py
-│   │   ├── quests.py
-│   │   ├── crew.py
-│   │   ├── reputation.py
-│   │   ├── treasure.py
-│   │   └── port.py
+│   │   ├── sailing.py      # Sailing and navigation mechanics
+│   │   ├── combat.py       # Naval and Sword Combat mechanics
+│   │   ├── trading.py      # Trading and economics mechanics
+│   │   ├── quests.py       # Quests and mission mechanics
+│   │   ├── crew.py         # Crew management mechanics
+│   │   ├── reputation.py   # Reputation management mechanics
+│   │   ├── treasure.py     # Treasure hunting mechanics
+│   │   └── port.py         # Port interactions mechanics
 │   │
-│   ├── /models         # Game data models
+│   ├── /models             # Game data models
 │   │   ├── __init__.py
-│   │   ├── ship.py
-│   │   ├── character.py
-│   │   ├── item.py
-│   │   └── map.py
+│   │   ├── ship.py         # Ship data model
+│   │   ├── character.py    # Character data model
+│   │   ├── item.py         # Item data model
+│   │   ├── map.py          # Map data model
+│   │   └── port.py         # Port data model
 │   │
-│   └── /utils          # Utility functions and helpers
+│   └── /utils              # Utility functions and helpers
 │       ├── __init__.py
 │       ├── helpers.py
 │       └── math_utils.py
