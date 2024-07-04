@@ -1,5 +1,5 @@
 import random
-from helpers import get_file_path
+from .helpers import get_file_path
 
 class DiceQuantity:
     def __init__(self, value: int):
