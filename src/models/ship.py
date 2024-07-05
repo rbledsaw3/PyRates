@@ -95,16 +95,55 @@ BRIG = ShipClass(
         guns=8, max_guns=23, ammo=1800, speed=116, max_speed=122, hull=320,
         sails=140, mast=120, min_nav=18, nav_cost=12, upgrades=15)
 
+CARAVEL = ShipClass(
+        ship_class="Caravel", min_crew=50, max_crew=75, cargo=80, max_cargo=120,
+        guns=8, max_guns=20, ammo=2000, speed=100, max_speed=116, hull=288,
+        sails=120, mast=72, min_nav=20, nav_cost=14, upgrades=14)
+
+CARGO_FLUYT = ShipClass(
+        ship_class="Cargo Fluyt", min_crew=60, max_crew=87, cargo=100, max_cargo=118,
+        guns=10, max_guns=19, ammo=3200, speed=111, max_speed=115, hull=300,
+        sails=100, mast=100, min_nav=24, nav_cost=16, upgrades=12)
+
+MERCHANTMAN = ShipClass(
+        ship_class="Merchantman", min_crew=100, max_crew=133, cargo=168, max_cargo=201,
+        guns=16, max_guns=27, ammo=2000, speed=104, max_speed=112, hull=360,
+        sails=120, mast=120, min_nav=35, nav_cost=19, upgrades=14)
+
+PRIVATEER = ShipClass(
+        ship_class="Privateer", min_crew=70, max_crew=150, cargo=80, max_cargo=120,
+        guns=20, max_guns=35, ammo=2500, speed=115, max_speed=120, hull=300,
+        sails=210, mast=90, min_nav=40, nav_cost=20, upgrades=18)
+
+FRIGATE = ShipClass(
+        ship_class="Frigate", min_crew=110, max_crew=175, cargo=40, max_cargo=70,
+        guns=26, max_guns=39, ammo=2800, speed=112, max_speed=116, hull=532,
+        sails=114, mast=114, min_nav=55, nav_cost=22, upgrades=16)
+
+FAST_GALLEON = ShipClass(
+        ship_class="Fast Galleon", min_crew=140, max_crew=200, cargo=86, max_cargo=116,
+        guns=20, max_guns=50, ammo=2000, speed=107, max_speed=115, hull=390,
+        sails=80, mast=117, min_nav=65, nav_cost=24, upgrades=18)
+
+SPANISH_GALLEON = ShipClass(
+        ship_class="Spanish Galleon", min_crew=210, max_crew=278, cargo=242, max_cargo=327,
+        guns=26, max_guns=43, ammo=1600, speed=100, max_speed=104, hull=528,
+        sails=176, mast=176, min_nav=80, nav_cost=27, upgrades=20)
+
+WAR_GALLEON = ShipClass(
+        ship_class="War Galleon", min_crew=280, max_crew=352, cargo=110, max_cargo=156,
+        guns=34, max_guns=80, ammo=5000, speed=91, max_speed=99, hull=840,
+        sails=180, mast=180, min_nav=100, nav_cost=30, upgrades=26)
+
+MAN_O_WAR = ShipClass(
+        ship_class="Man-O-War", min_crew=300, max_crew=385, cargo=200, max_cargo=280,
+        guns=42, max_guns=95, ammo=6000, speed=100, max_speed=104, hull=910,
+        sails=195, mast=195, min_nav=110, nav_cost=33, upgrades=30)
+
 if __name__ == "__main__":
-    sloops = [Ship(ship_class=SLOOP) for _ in range(3)]
-    for sloop in sloops:
-        print(sloop)
-    pinnaces = [Ship(ship_class=PINNACE) for _ in range(3)]
-    for pinnace in pinnaces:
-        print(pinnace)
-    barques = [Ship(ship_class=BARQUE) for _ in range(3)]
-    for barque in barques:
-        print(barque)
-    brigs = [Ship(ship_class=BRIG) for _ in range(3)]
-    for brig in brigs:
-        print(brig)
+    ship_classes = [SLOOP, PINNACE, BARQUE, BRIG, CARAVEL, CARGO_FLUYT, MERCHANTMAN,
+                    PRIVATEER, FRIGATE, FAST_GALLEON, SPANISH_GALLEON, WAR_GALLEON, 
+                    MAN_O_WAR]
+    all_ships = [Ship(ship_class= sc) for sc in ship_classes]
+    for ship in all_ships:
+        print(ship)
