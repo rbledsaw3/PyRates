@@ -7,7 +7,7 @@ class DiceQuantity:
             raise ValueError("Dice quantity must be greater than 0")
         if not isinstance(value, int):
             raise TypeError("Dice quantity value must be an integer")
-        self.value = value
+        self.value: int = value
 
 class DiceSideQuantity:
     def __init__(self, value: int):
@@ -15,7 +15,7 @@ class DiceSideQuantity:
             raise ValueError("Dice must have more than 1 side")
         if not isinstance(value, int):
             raise TypeError("Number of dice sides must be an integer")
-        self.value = value
+        self.value: int = value
 
 def roll(dice_qty: DiceQuantity, dice_sides: DiceSideQuantity) -> int:
     """
@@ -82,12 +82,12 @@ def generate_ship_name() -> str:
     Raises:
         IndexError: If indices are less than 0 or greater than last index
     """
-    dice_qty = DiceQuantity(1)
-    dice_sides_first = DiceSideQuantity(len(ship_first_names))
-    dice_sides_second = DiceSideQuantity(len(ship_second_names))
+    dice_qty: DiceQuantity = DiceQuantity(1)
+    dice_sides_first: DiceSideQuantity = DiceSideQuantity(len(ship_first_names))
+    dice_sides_second: DiceSideQuantity = DiceSideQuantity(len(ship_second_names))
 
-    first_index = roll(dice_qty, dice_sides_first) - 1
-    second_index = roll(dice_qty, dice_sides_second) - 1
+    first_index: int = roll(dice_qty, dice_sides_first) - 1
+    second_index: int = roll(dice_qty, dice_sides_second) - 1
 
     if first_index < 0:
         raise IndexError(f"First Index is less than 0 with a value of {first_index}")

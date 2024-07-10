@@ -16,5 +16,5 @@ def get_file_path(relative_path: str) -> str:
 
     if not isinstance(relative_path, str):
         raise TypeError("The relative path must be a string")
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+    project_root: str = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     return os.path.join(project_root, relative_path)
