@@ -2,7 +2,7 @@ import random
 from .helpers import get_file_path
 
 class DiceQuantity:
-    def __init__(self, value: int):
+    def __init__(self, value: int) -> None:
         if value < 1:
             raise ValueError("Dice quantity must be greater than 0")
         if not isinstance(value, int):
@@ -10,7 +10,7 @@ class DiceQuantity:
         self.value: int = value
 
 class DiceSideQuantity:
-    def __init__(self, value: int):
+    def __init__(self, value: int) -> None:
         if value < 2:
             raise ValueError("Dice must have more than 1 side")
         if not isinstance(value, int):
@@ -96,7 +96,10 @@ def generate_ship_name() -> str:
 
     return f"{ship_first_names[first_index]} {ship_second_names[second_index]}"
 
-# Generate and print random ship names
-if __name__ == "__main__":
+def test_ship_name_generation() -> None:
     for _ in range(10):
         print(generate_ship_name())
+
+# Generate and print random ship names
+if __name__ == "__main__":
+    test_ship_name_generation()

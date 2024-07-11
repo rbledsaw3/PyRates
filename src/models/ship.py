@@ -4,7 +4,7 @@ class ShipClass:
     def __init__(self, ship_class: str, min_crew: int, max_crew: int, cargo: int,
                  max_cargo: int, guns: int, max_guns: int, ammo: int,
                  speed: int, max_speed: int, hull: int, sails: int, mast: int,
-                 min_nav: int, nav_cost: int, upgrades: int):
+                 min_nav: int, nav_cost: int, upgrades: int) -> None:
         if not isinstance(ship_class, str):
             raise TypeError("ship_class must be a string")
         if not all(isinstance(param, int) for param in 
@@ -34,7 +34,7 @@ class ShipClass:
         self.upgrades: int = upgrades
 
 class Ship:
-    def __init__(self, ship_class: ShipClass, name: str = None):
+    def __init__(self, ship_class: ShipClass, name: str = None) -> None:
         if not isinstance(ship_class, ShipClass):
             raise TypeError("ship_class must be an instance of ShipClass")
         if name is not None and not isinstance(name, str):
@@ -61,7 +61,7 @@ class Ship:
         self.nav_cost: int = ship_class.nav_cost
         self.upgrades: int = ship_class.upgrades
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         hull_condition = (self.current_hull / self.hull) * 100
         sails_condition = (self.current_sails / self.sails) * 100
         mast_condition = (self.current_mast / self.mast) * 100
@@ -140,10 +140,13 @@ MAN_O_WAR = ShipClass(
         guns = 42, max_guns = 95, ammo = 6000, speed = 100, max_speed = 104, hull = 910,
         sails = 195, mast = 195, min_nav = 110, nav_cost = 33, upgrades = 30)
 
-if __name__ == "__main__":
+def test() -> None:
     ship_classes = [SLOOP, PINNACE, BARQUE, BRIG, CARAVEL, CARGO_FLUYT, MERCHANTMAN,
                     PRIVATEER, FRIGATE, FAST_GALLEON, SPANISH_GALLEON, WAR_GALLEON, 
                     MAN_O_WAR]
     all_ships = [Ship(ship_class= sc) for sc in ship_classes]
     for ship in all_ships:
         print(ship)
+
+if __name__ == "__main__":
+    test()
