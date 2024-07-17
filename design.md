@@ -72,7 +72,7 @@
 │   ├── /models             # Game data models
 │   │   ├── __init__.py
 │   │   ├── ship.py         # Ship data model
-│   │   ├── character.py    # Character data model
+│   │   ├── player.py       # Player data model
 │   │   ├── item.py         # Item data model
 │   │   ├── map.py          # Map data model
 │   │   └── port.py         # Port data model
@@ -195,7 +195,7 @@ class ReputationManager:
         self.reputation = {}
     
     def court(self, name):
-        # Logic to court a character
+        # Logic to court a player
         pass
     
     def check_reputation(self):
