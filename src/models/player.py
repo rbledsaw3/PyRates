@@ -30,18 +30,6 @@ class Stats:
                 f"luck={self.luck}, wit={self.wit}, trade={self.trade}, status={self.status},"
                 f"marquees={self.marquees}")
 
-    def __eq__(self, other):
-        return (self.health == other.health and self.navigation == other.navigation and
-                self.fencing == other.fencing and self.gunnery == other.gunnery and
-                self.leadership == other.leadership and self.charm == other.charm and
-                self.luck == other.luck and self.wit == other.wit and self.trade == other.trade and
-                self.status == other.status and self.marquees == other.marquees)
-
-    def __ne__(self, other):
-        return not self.__eq__(other)
-
-
-
 class Player:
     def __init__(self, name: str, stats: Stats):
         self.name = name
@@ -52,12 +40,6 @@ class Player:
 
     def __repr__(self):
         return f"Player(name={self.name}, stats={self.stats})"
-
-    def __eq__(self, other):
-        return self.name == other.name and self.stats == other.stats
-
-    def __ne__(self, other):
-        return not self.__eq__(other)
 
 def main():
     stats = Stats(health=100, navigation=10, fencing=10, gunnery=10, leadership=10,
